@@ -1,0 +1,6 @@
+@ExamenWebStar_HostAddress = http://localhost:5027
+
+GET {{ExamenWebStar_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

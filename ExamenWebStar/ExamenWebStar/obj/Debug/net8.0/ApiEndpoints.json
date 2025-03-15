@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "ExamenWebStar.Controllers.AreaController",
+    "Method": "AddArea",
+    "RelativePath": "api/Area/AddArea",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "area",
+        "Type": "ExamenWebStar.Models.AreaModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.AreaController",
+    "Method": "GetArea",
+    "RelativePath": "api/Area/GetArea",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

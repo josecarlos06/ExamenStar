@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\controllers\\areacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\controllers\\areacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\models\\areamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\models\\areamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|c:\\users\\jo0sh\\desktop\\trabajo\\examenstar\\examenwebstar\\examenwebstar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2E9BBF65-2C5C-4E43-A8BC-05179BDB14F4}|ExamenWebStar\\ExamenWebStar.csproj|solutionrelative:examenwebstar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Program.cs",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Program.cs",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Program.cs",
+              "RelativeToolTip": "ExamenWebStar\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T04:03:39.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AreaController.cs",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Controllers\\AreaController.cs",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Controllers\\AreaController.cs",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Controllers\\AreaController.cs",
+              "RelativeToolTip": "ExamenWebStar\\Controllers\\AreaController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowEoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T03:44:29.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmpleadoModel.cs",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Models\\EmpleadoModel.cs",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Models\\EmpleadoModel.cs",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Models\\EmpleadoModel.cs",
+              "RelativeToolTip": "ExamenWebStar\\Models\\EmpleadoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T04:00:43.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AreaModel.cs",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Models\\AreaModel.cs",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Models\\AreaModel.cs",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Models\\AreaModel.cs",
+              "RelativeToolTip": "ExamenWebStar\\Models\\AreaModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T03:58:57.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ExamenWebStar\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\appsettings.Development.json",
+              "RelativeToolTip": "ExamenWebStar\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T03:50:07.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\appsettings.json",
+              "RelativeDocumentMoniker": "ExamenWebStar\\appsettings.json",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\appsettings.json",
+              "RelativeToolTip": "ExamenWebStar\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T03:49:55.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ExamenWebStar\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T03:46:49.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ExamenWebStar\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\jo0sh\\Desktop\\Trabajo\\ExamenStar\\ExamenWebStar\\ExamenWebStar\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ExamenWebStar\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T04:20:51.478Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
