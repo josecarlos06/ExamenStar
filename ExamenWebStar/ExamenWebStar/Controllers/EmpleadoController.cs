@@ -24,7 +24,7 @@ namespace ExamenWebStar.Controllers
             try
             {
                 string query = @"
-                    SELECT E.idEmpleado, E.nombre, E.edad, E.correoElectronico, E.idArea ,A.nombre AS area
+                    SELECT E.idEmpleado, E.nombre, E.edad, E.correoElectronico, E.idArea ,A.nombre AS area, E.Alta
 	                FROM Empleado AS E 
 	                LEFT JOIN Area AS A ON E.idArea = A.idArea";
 
@@ -57,8 +57,8 @@ namespace ExamenWebStar.Controllers
         {
             try
             {
-                string query = "INSERT INTO Empleado (nombre, edad, correoElectronico, idArea) VALUES ({0}, {1}, {2}, {3})";
-                await context.Database.ExecuteSqlRawAsync(query, empleado.Nombre, empleado.Edad, empleado.CorreoElectronico, empleado.IdArea);
+                string query = "INSERT INTO Empleado (nombre, edad, correoElectronico,idArea, alta ) VALUES ({0}, {1}, {2}, {3},{4})";
+                await context.Database.ExecuteSqlRawAsync(query, empleado.Nombre, empleado.Edad, empleado.CorreoElectronico, empleado.IdArea, empleado.Alta);
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     status = 200,

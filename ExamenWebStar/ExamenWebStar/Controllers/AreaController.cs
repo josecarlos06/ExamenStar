@@ -64,15 +64,16 @@ namespace ExamenWebStar.Controllers
             try
             {
                 string query = @"
-                    SELECT 
+                    SELECT
                         Area.idArea,
                         Area.nombre,
                         Area.descripcion,
                         Area.activo,
+                        Area.Alta, 
                         COUNT(Empleado.idEmpleado) AS CantidadEmpleados
                     FROM Area
                     LEFT JOIN Empleado ON Empleado.idArea = Area.idArea
-                    GROUP BY Area.idArea, Area.nombre, Area.activo, Area.descripcion";
+                    GROUP BY Area.idArea, Area.nombre, Area.activo, Area.descripcion, Area.Alta";
 
                 var listArea = await context.Set<AreaEmpleadoDto>()
                         .FromSqlRaw(query)

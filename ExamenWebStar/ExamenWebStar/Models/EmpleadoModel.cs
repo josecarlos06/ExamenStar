@@ -24,6 +24,9 @@ namespace ExamenWebStar.Models
         [Required]
         public int IdArea { get; set; }
 
+        [Required]
+        public DateTime Alta { get; set; }
+
         [NotMapped]
         public string? Area { get; set; }
     }
@@ -35,6 +38,7 @@ namespace ExamenWebStar.Models
         public string Nombre { get; set; } 
 
         public int Edad { get; set; }
+        public DateTime Alta { get; set; }
 
         public string CorreoElectronico { get; set; }
 

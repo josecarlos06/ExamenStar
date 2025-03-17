@@ -18,6 +18,9 @@ namespace ExamenWebStar.Models
         [StringLength(70)]
         public string Nombre { get; set; } = string.Empty;
 
+        [Required]
+        public DateTime Alta { get; set; }
+
         [StringLength(150)]
         public string? Descripcion { get; set; }
     }
@@ -27,6 +30,7 @@ namespace ExamenWebStar.Models
         public int IdArea { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public DateTime Alta { get; set; }
         public bool Activo { get; set; }
         public int? CantidadEmpleados { get; set; }
     }

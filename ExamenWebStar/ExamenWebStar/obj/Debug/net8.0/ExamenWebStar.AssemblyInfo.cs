@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExamenWebStar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17bc48ae3d4d45bf9082cd26b7fd33ce17ba513d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9f07e120f3eec6424a86d56c3d0e7d51528280a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExamenWebStar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExamenWebStar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

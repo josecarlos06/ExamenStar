@@ -1,0 +1,36 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+
+# .NET Core
+**/appsettings*.json
+!appsettings.Development.json
+.env
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# User-specific files
+*.swp
+*.sln.cache
+*.db
