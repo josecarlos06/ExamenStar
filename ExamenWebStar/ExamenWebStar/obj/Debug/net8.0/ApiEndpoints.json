@@ -18,11 +18,111 @@
   {
     "ContainingType": "ExamenWebStar.Controllers.AreaController",
     "Method": "GetArea",
+    "RelativePath": "api/Area/DeleteArea/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.AreaController",
+    "Method": "GetArea",
     "RelativePath": "api/Area/GetArea",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.AreaController",
+    "Method": "GetAreaSearch",
+    "RelativePath": "api/Area/GetAreaSearch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.AreaController",
+    "Method": "UpdateArea",
+    "RelativePath": "api/Area/UpdateArea",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "area",
+        "Type": "ExamenWebStar.Models.AreaModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.EmpleadoController",
+    "Method": "DeleteEmpleado",
+    "RelativePath": "api/Empleado/DeleteEmpleado/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.EmpleadoController",
+    "Method": "GetEmpleado",
+    "RelativePath": "api/Empleado/GetEmpleado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.EmpleadoController",
+    "Method": "PutEmpleado",
+    "RelativePath": "api/Empleado/putEmpleado",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empleado",
+        "Type": "ExamenWebStar.Models.EmpleadoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenWebStar.Controllers.EmpleadoController",
+    "Method": "SaveEmpleado",
+    "RelativePath": "api/Empleado/saveEmpleado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empleado",
+        "Type": "ExamenWebStar.Models.EmpleadoModel",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

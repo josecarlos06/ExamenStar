@@ -11,6 +11,8 @@ namespace ExamenWebStar.Models
 
         [Required]
         public bool Activo { get; set; }
+        [NotMapped]
+        public int? CantidadEmpleados { get; set; }
 
         [Required]
         [StringLength(70)]
@@ -19,4 +21,14 @@ namespace ExamenWebStar.Models
         [StringLength(150)]
         public string? Descripcion { get; set; }
     }
+
+    public class AreaEmpleadoDto
+    {
+        public int IdArea { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public bool Activo { get; set; }
+        public int? CantidadEmpleados { get; set; }
+    }
+
 }

@@ -23,5 +23,23 @@ namespace ExamenWebStar.Models
 
         [Required]
         public int IdArea { get; set; }
+
+        [NotMapped]
+        public string? Area { get; set; }
+    }
+
+    public class EmpleadoModelDtos
+    {
+        public int IdEmpleado { get; set; }
+
+        public string Nombre { get; set; } 
+
+        public int Edad { get; set; }
+
+        public string CorreoElectronico { get; set; }
+
+        public int IdArea { get; set; }
+
+        public string Area { get; set; }
     }
 }

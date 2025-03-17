@@ -9,5 +9,13 @@ namespace ExamenWebStar.Data
         {}
         public DbSet<AreaModel> Area { get; set; }
         public DbSet<EmpleadoModel> Empleado { get; set; }
+
+        public DbSet<AreaEmpleadoDto> AreaEmpleadoDtos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AreaEmpleadoDto>().HasNoKey();
+            modelBuilder.Entity<EmpleadoModelDtos>().HasNoKey();
+        }
     }
 }

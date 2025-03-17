@@ -2,6 +2,7 @@
 using ExamenWebStar.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -42,13 +43,42 @@ namespace ExamenWebStar.Controllers
             } 
         }
 
+        [HttpGet("GetAreaSearch")]
+        public async Task<IActionResult> GetAreaSearch()
+        {
+            var listArea = await context.Area
+                .Select(e => new { e.IdArea, e.Nombre })
+                .ToListAsync();
+            return StatusCode(StatusCodes.Status200OK, new
+            {
+                status = 200,
+                message = "Se obtuvieron de forma correcta los datos",
+                data = listArea
+            });
+        }
+
 
         [HttpGet("GetArea")]
         public async Task<ActionResult> GetArea()
         {
             try
             {
-                List<AreaModel> listArea = await context.Area.ToListAsync();
+                string query = @"
+                    SELECT 
+                        Area.idArea,
+                        Area.nombre,
+                        Area.descripcion,
+                        Area.activo,
+                        COUNT(Empleado.idEmpleado) AS CantidadEmpleados
+                    FROM Area
+                    LEFT JOIN Empleado ON Empleado.idArea = Area.idArea
+                    GROUP BY Area.idArea, Area.nombre, Area.activo, Area.descripcion";
+
+                var listArea = await context.Set<AreaEmpleadoDto>()
+                        .FromSqlRaw(query)
+                        .AsNoTracking()
+                        .ToListAsync();
+
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     status = 200,
@@ -73,11 +103,56 @@ namespace ExamenWebStar.Controllers
         {
             try
             {
-                await context.Area.Where(e => e.IdArea == id).ExecuteDeleteAsync();
+                var validaExistencias = await context.Empleado.Where(a => a.IdArea == id).ToListAsync();
+
+                if(validaExistencias.Count >= 1) 
+                {
+                    return StatusCode(StatusCodes.Status200OK, new
+                    {
+                        status = 404,
+                        message = "La area actual no se puedo eliminar, Existen empleados Relacionados",
+                    });
+                }
+
+                await context.Area.Where( a => a.IdArea == id).ExecuteDeleteAsync();
+
                 return StatusCode(StatusCodes.Status200OK, new
                 {
                     status = 200,
                     message = "Se elemino de forma exitosa",
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status404NotFound, new
+                {
+                    status = 404,
+                    message = "Ocurrio un error en el proceso",
+                });
+            }
+        }
+
+        [HttpPut("UpdateArea")]
+        public async Task<ActionResult> UpdateArea([FromBody] AreaModel area)
+        {
+            try
+            {
+                if(area.IdArea == 0)
+                {
+                    return StatusCode(StatusCodes.Status200OK, new
+                    {
+                        status = 200,
+                        message = "Objeto no contiene id",
+                    });
+                };
+
+                context.Update(area);
+                await context.SaveChangesAsync();
+
+                return StatusCode(StatusCodes.Status200OK, new
+                {
+                    status = 200,
+                    message = "Area modificada correctamente",
                 });
 
             }
