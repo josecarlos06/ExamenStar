@@ -5,6 +5,8 @@ namespace ExamenWebStar.Models
 {
     public class AreaModel
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdArea { get; set; }
 
         [Required]

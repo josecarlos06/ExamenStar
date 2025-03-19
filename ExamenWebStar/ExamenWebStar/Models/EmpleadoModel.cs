@@ -5,6 +5,8 @@ namespace ExamenWebStar.Models
 {
     public class EmpleadoModel
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEmpleado { get; set; }
 
         [Required(ErrorMessage = "El Nombre es obligatorio.")]

@@ -54,6 +54,33 @@ namespace ExamenWebStar.Controllers
             } 
         }
 
+        [HttpGet("GetAreaSearch")]
+        public async Task<IActionResult> GetAreaSearch()
+        {
+            try
+            {
+                var listArea = await context.Area
+                                .Select(e => new { e.IdArea, e.Nombre })
+                                .ToListAsync();
+                return Ok(new
+                {
+                    status = 200,
+                    message = "Se obtuvieron de forma correcta los datos",
+                    data = listArea
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
+                });
+            }
+
+        }
+
+
         [HttpGet("GetArea")]
         public async Task<ActionResult<List<AreaEmpleadoDto>>> GetArea()
         {
