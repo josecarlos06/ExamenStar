@@ -5,8 +5,6 @@ namespace ExamenWebStar.Models
 {
     public class AreaModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdArea { get; set; }
 
         [Required]
@@ -14,14 +12,16 @@ namespace ExamenWebStar.Models
         [NotMapped]
         public int? CantidadEmpleados { get; set; }
 
-        [Required]
-        [StringLength(70)]
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(70, ErrorMessage = "El nombre no puede superar los 100 caracteres.")]
         public string Nombre { get; set; } = string.Empty;
 
         [Required]
         public DateTime Alta { get; set; }
 
-        [StringLength(150)]
+
+        [Required(ErrorMessage = "El Descripcion es obligatorio.")]
+        [StringLength(150, ErrorMessage = "El Descripcion no puede superar los 100 caracteres.")]
         public string? Descripcion { get; set; }
     }
 

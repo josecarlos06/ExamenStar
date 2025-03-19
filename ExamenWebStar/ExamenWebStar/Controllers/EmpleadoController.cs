@@ -19,7 +19,7 @@ namespace ExamenWebStar.Controllers
 
 
         [HttpGet("GetEmpleado")]
-        public async Task<ActionResult> GetEmpleado()
+        public async Task<IActionResult> GetEmpleado()
         {
             try
             {
@@ -33,20 +33,20 @@ namespace ExamenWebStar.Controllers
                         .AsNoTracking()
                         .ToListAsync();
 
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
-                    message = "Se obtuvieron de forma correcta los datos",
+                    message = "Empleados obtenidos correctamente",
                     data = listEmpleado
                 });
 
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status404NotFound, new
+                return BadRequest(new
                 {
-                    status = 404,
-                    message = "Ocurrio un error en el proceso",
+                    status = 400,
+                    message = "Ocurrio un error" + ex.Message,
                 });
             }
         }
@@ -57,19 +57,28 @@ namespace ExamenWebStar.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(new
+                    {
+                        status = 400,
+                        message = "Datos inválidos",
+                        errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
+                    });
+                }
                 string query = "INSERT INTO Empleado (nombre, edad, correoElectronico,idArea, alta ) VALUES ({0}, {1}, {2}, {3},{4})";
                 await context.Database.ExecuteSqlRawAsync(query, empleado.Nombre, empleado.Edad, empleado.CorreoElectronico, empleado.IdArea, empleado.Alta);
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
-                    message = "Se guardaron datos correctamente"
+                    message = "El empleado se guardo de forma correcta"
                 });
             }
             catch(Exception ex)
             {
-                return StatusCode(StatusCodes.Status200OK, new
+                return BadRequest(new
                 {
-                    status = 500,
+                    status = 400,
                     statusText = "Error",
                     message = "Ocurrió un error: " + ex.Message
                 });
@@ -84,17 +93,17 @@ namespace ExamenWebStar.Controllers
                 string query = "DELETE FROM empleado WHERE idEmpleado = {0}";
                 await context.Database.ExecuteSqlRawAsync(query, id);
 
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
-                    message = "Se elemino de forma correcta"
+                    message = "El empleado se elimino de forma correcta"
                 });
             }catch(Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, new
+                return BadRequest( new
                 {
-                    status = 404,
-                    message = "Ocurrio un error " + ex.ToString()
+                    status = 400,
+                    message = "Ocurrio un error " + ex.Message
                 });
             }
         }
@@ -107,21 +116,57 @@ namespace ExamenWebStar.Controllers
             {
                 string query = "update Empleado set nombre = {0} ,edad = {1} , correoElectronico = {2} , idArea = {3} where idEmpleado = {4}";
                 await context.Database.ExecuteSqlRawAsync(query, empleado.Nombre, empleado.Edad, empleado.CorreoElectronico, empleado.IdArea, empleado.IdEmpleado);
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
                     message = "Se edito de forma correcta"
                 });
             }catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, new
+                return BadRequest(new
                 {
-                    status = 404,
+                    status = 400,
                     message = "Ocurrio un error " + ex.ToString()
                 });
             }
-
-
         }
+
+
+
+        [HttpGet("EmpleadosPage")]
+        public async Task<IActionResult> GetEmpleados([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        {
+            try
+            {
+              
+                int offset = (pageNumber - 1) * pageSize;
+
+                string query = @"
+                    SELECT E.idEmpleado, E.nombre, E.edad, E.correoElectronico, E.idArea ,A.nombre AS area, E.alta
+                    FROM Empleado AS E
+                    LEFT JOIN Area AS A ON E.idArea = A.idArea
+                    ORDER BY E.idEmpleado
+                    OFFSET {0} ROWS
+                    FETCH NEXT {1} ROWS ONLY;";
+
+                var empleados = await context.Set<EmpleadoModelDtos>().FromSqlRaw(query, offset, pageSize).ToListAsync();
+
+                return Ok(new
+                {
+                    status = 200,
+                    message = "Empleados obtenidos correctamente",
+                    data = empleados
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
+                });
+            }
+        }
+
     }
 }

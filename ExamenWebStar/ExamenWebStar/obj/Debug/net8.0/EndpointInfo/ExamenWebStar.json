@@ -36,18 +36,6 @@
         }
       }
     },
-    "/api/Area/GetAreaSearch": {
-      "get": {
-        "tags": [
-          "Area"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Area/GetArea": {
       "get": {
         "tags": [
@@ -55,7 +43,33 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AreaEmpleadoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AreaEmpleadoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AreaEmpleadoDto"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -210,13 +224,77 @@
           }
         }
       }
+    },
+    "/api/Empleado/EmpleadosPage": {
+      "get": {
+        "tags": [
+          "Empleado"
+        ],
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AreaEmpleadoDto": {
+        "type": "object",
+        "properties": {
+          "idArea": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "alta": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "activo": {
+            "type": "boolean"
+          },
+          "cantidadEmpleados": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AreaModel": {
         "required": [
           "activo",
+          "alta",
+          "descripcion",
           "nombre"
         ],
         "type": "object",
@@ -238,17 +316,21 @@
             "minLength": 0,
             "type": "string"
           },
+          "alta": {
+            "type": "string",
+            "format": "date-time"
+          },
           "descripcion": {
             "maxLength": 150,
             "minLength": 0,
-            "type": "string",
-            "nullable": true
+            "type": "string"
           }
         },
         "additionalProperties": false
       },
       "EmpleadoModel": {
         "required": [
+          "alta",
           "correoElectronico",
           "edad",
           "idArea",
@@ -278,6 +360,10 @@
           "idArea": {
             "type": "integer",
             "format": "int32"
+          },
+          "alta": {
+            "type": "string",
+            "format": "date-time"
           },
           "area": {
             "type": "string",

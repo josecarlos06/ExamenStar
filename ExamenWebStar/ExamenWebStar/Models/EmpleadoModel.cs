@@ -5,21 +5,19 @@ namespace ExamenWebStar.Models
 {
     public class EmpleadoModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEmpleado { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El Nombre es obligatorio.")]
         [StringLength(100)]
-        public string Nombre { get; set; } = string.Empty;
+        public string Nombre { get; set; } 
 
         [Required]
         public int Edad { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "El Correo Electronico es obligatorio.")]
         [StringLength(100)]
         [EmailAddress]
-        public string CorreoElectronico { get; set; } = string.Empty;
+        public string CorreoElectronico { get; set; }
 
         [Required]
         public int IdArea { get; set; }

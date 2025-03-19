@@ -25,9 +25,20 @@ namespace ExamenWebStar.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(new
+                    {
+                        status = 400,
+                        message = "Datos inválidos",
+                        errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
+                    });
+                }
+
                 context.Add(area);
                 await context.SaveChangesAsync();
-                return StatusCode(StatusCodes.Status200OK, new
+
+                return Ok(new
                 {
                     status = 200,
                     message = "Area guardada correctamente",
@@ -35,31 +46,16 @@ namespace ExamenWebStar.Controllers
 
             }
             catch (Exception ex) {
-                return StatusCode(StatusCodes.Status404NotFound, new
+                return BadRequest(new
                 {
-                    status = 404,
-                    message = "Ocurrio un error en el proceso",
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
                 });
             } 
         }
 
-        [HttpGet("GetAreaSearch")]
-        public async Task<IActionResult> GetAreaSearch()
-        {
-            var listArea = await context.Area
-                .Select(e => new { e.IdArea, e.Nombre })
-                .ToListAsync();
-            return StatusCode(StatusCodes.Status200OK, new
-            {
-                status = 200,
-                message = "Se obtuvieron de forma correcta los datos",
-                data = listArea
-            });
-        }
-
-
         [HttpGet("GetArea")]
-        public async Task<ActionResult> GetArea()
+        public async Task<ActionResult<List<AreaEmpleadoDto>>> GetArea()
         {
             try
             {
@@ -75,12 +71,12 @@ namespace ExamenWebStar.Controllers
                     LEFT JOIN Empleado ON Empleado.idArea = Area.idArea
                     GROUP BY Area.idArea, Area.nombre, Area.activo, Area.descripcion, Area.Alta";
 
-                var listArea = await context.Set<AreaEmpleadoDto>()
+                List<AreaEmpleadoDto> listArea = await context.Set<AreaEmpleadoDto>()
                         .FromSqlRaw(query)
                         .AsNoTracking()
                         .ToListAsync();
 
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
                     message = "Se obtuvieron de forma correcta los datos",
@@ -90,10 +86,10 @@ namespace ExamenWebStar.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status404NotFound, new
+                return BadRequest(new
                 {
-                    status = 404,
-                    message = "Ocurrio un error en el proceso",
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
                 });
             }
         }
@@ -108,61 +104,62 @@ namespace ExamenWebStar.Controllers
 
                 if(validaExistencias.Count >= 1) 
                 {
-                    return StatusCode(StatusCodes.Status200OK, new
+                    return Ok(new
                     {
                         status = 404,
-                        message = "La area actual no se puedo eliminar, Existen empleados Relacionados",
+                        message = "El registro actual no se puedo eliminar, Existen empleados Relacionados",
                     });
                 }
 
                 await context.Area.Where( a => a.IdArea == id).ExecuteDeleteAsync();
 
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
-                    message = "Se elemino de forma exitosa",
+                    message = "Se eliminino de forma correcta",
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status404NotFound, new
+                return BadRequest(new
                 {
-                    status = 404,
-                    message = "Ocurrio un error en el proceso",
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
                 });
             }
         }
 
         [HttpPut("UpdateArea")]
-        public async Task<ActionResult> UpdateArea([FromBody] AreaModel area)
+        public async Task<IActionResult> UpdateArea([FromBody] AreaModel area)
         {
             try
             {
                 if(area.IdArea == 0)
                 {
-                    return StatusCode(StatusCodes.Status200OK, new
+                    return Ok(new
                     {
                         status = 200,
-                        message = "Objeto no contiene id",
+                        message = "Objeto no cuenta con Id"
                     });
                 };
 
                 context.Update(area);
                 await context.SaveChangesAsync();
 
-                return StatusCode(StatusCodes.Status200OK, new
+                return Ok(new
                 {
                     status = 200,
-                    message = "Area modificada correctamente",
+                    message = "Área modificada correctamente."
                 });
 
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status404NotFound, new
+
+                return BadRequest(new
                 {
-                    status = 404,
-                    message = "Ocurrio un error en el proceso",
+                    status = 400,
+                    message = "Ocurrió un error: " + ex.Message
                 });
             }
         }
