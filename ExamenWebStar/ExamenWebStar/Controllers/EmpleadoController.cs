@@ -59,7 +59,7 @@ namespace ExamenWebStar.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(new
+                    return Ok(new
                     {
                         status = 400,
                         message = "Datos inválidos",
